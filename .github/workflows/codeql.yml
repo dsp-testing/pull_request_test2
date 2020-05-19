@@ -1,6 +1,6 @@
 name: "CodeQL action"
 
-on: [pull_request, push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -17,6 +17,7 @@ jobs:
     # the head of the pull request instead of the merge commit.
     - run: git checkout HEAD^2
       if: ${{ github.event_name == 'pull_request' }}
+
 
     # From here it's normal
     - uses: github/codeql-action/init@allow_pull_requests
