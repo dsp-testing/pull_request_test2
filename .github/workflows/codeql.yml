@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - run: echo ${{github.event.pull_request.head}}
+      
     - uses: actions/checkout@v2
       with:
         # Must fetch at least the immediate parents so that if this is
